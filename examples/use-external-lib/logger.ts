@@ -9,11 +9,34 @@ import chalk from 'chalk'
  */
 import envinfo from 'envinfo'
 
+
+interface Options {
+  prefix?: string
+}
+
 class Logger {
-  log () {
+  options: Options
 
+  constructor (options?: Options) {
+    this.options = options || {prefix: 'Vot'}
   }
-  fatal () {
 
+  setOptions(options: Options) {
+    Object.assign(this.options, options)
+  }
+
+  log (...args: any[]) {
+    console.log(chalk.white(this.options.prefix), ...args)
+  }
+  warn (...args: any[]) {
+    console.log(chalk.yellow(this.options.prefix), ...args)
+  }
+  fatal (...args: any[]) {
+    console.log(chalk.cyan(this.options.prefix), ...args)
+  }
+  success (...args: any[]) {
+    console.log(chalk.green(this.options.prefix), ...args)
   }
 }
+
+export default new Logger()
