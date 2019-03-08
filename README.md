@@ -1,0 +1,2 @@
+# typescript start
+tsc [file]

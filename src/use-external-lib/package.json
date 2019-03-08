@@ -1,0 +1,20 @@
+{
+  "name": "use-external-lib",
+  "version": "1.0.0",
+  "description": "use-external-lib",
+  "preferGlobal": true,
+  "types": "types/envinfo.d.ts",
+  "scripts": {
+    "types": "tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eamiear",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0"
+  },
+  "dependencies": {
+    "envinfo": "^7.1.0",
+    "request": "^2.88.0"
+  }
+}
