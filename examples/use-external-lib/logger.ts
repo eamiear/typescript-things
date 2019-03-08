@@ -16,9 +16,10 @@ interface Options {
 
 class Logger {
   options: Options
+  prefix: string = ' Vot'
 
   constructor (options?: Options) {
-    this.options = options || {prefix: 'Vot'}
+    this.options = options || {}
   }
 
   setOptions(options: Options) {
@@ -26,16 +27,16 @@ class Logger {
   }
 
   log (...args: any[]) {
-    console.log(chalk.white(this.options.prefix), ...args)
+    console.log(chalk.white(this.prefix), ...args)
   }
   warn (...args: any[]) {
-    console.log(chalk.yellow(this.options.prefix), ...args)
+    console.log(chalk.yellow(this.prefix), ...args)
   }
   fatal (...args: any[]) {
-    console.log(chalk.cyan(this.options.prefix), ...args)
+    console.log(chalk.cyan(this.prefix), ...args)
   }
   success (...args: any[]) {
-    console.log(chalk.green(this.options.prefix), ...args)
+    console.log(chalk.green(this.prefix), ...args)
   }
 }
 
